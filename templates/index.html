@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telugu Mood Songs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Telugu Mood Songs 🎶</h1>
+        <input type="text" id="userInput" placeholder="Enter your mood..." />
+        <button onclick="sendMessage()">Submit</button>
+        <div id="response"></div>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const msg = document.getElementById("userInput").value;
+            const resDiv = document.getElementById("response");
+            const response = await fetch("/get", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: msg })
+            });
+            const data = await response.json();
+            let html = `<p>${data.reply}</p><ul>`;
+            data.songs.forEach(song => {
+                html += `<li>${song.title}</li>`;
+            });
+            html += `</ul>`;
+            resDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
