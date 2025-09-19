@@ -17,8 +17,10 @@ No external APIs (like Spotify) are required — it uses a fixed list of Telugu 
 
 telugu-mood-app/
 ├── app.py              # Flask backend
+
 ├── templates/
 │   └── index.html      # Frontend UI
+
 └── static/
     └── style.css       # Styling
 
@@ -37,20 +39,21 @@ telugu-mood-app/
    
    python -m venv venv
    venv\Scripts\activate   # On Windows
+   
    source venv/bin/activate  # On Mac/Linux
   
 
-3. **Install dependencies**:
+4. **Install dependencies**:
    
    pip install flask
   
 
-4. **Run the app**:
+5. **Run the app**:
    
    python app.py
   
 
-5. Open your browser and go to:
+6. Open your browser and go to:
    
    http://127.0.0.1:5000/
    
