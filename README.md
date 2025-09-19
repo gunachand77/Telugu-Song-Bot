@@ -55,7 +55,7 @@ telugu-mood-app/
 
 6. Open your browser and go to:
    
-   http://127.0.0.1:5000/
+  you can see the local ip address click on that
    
 
 
